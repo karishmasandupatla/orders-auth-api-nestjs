@@ -1,135 +1,57 @@
-# Intern API - Orders & Authentication
+# Orders & Auth API — NestJS
 
-REST API for authentication and order management using Node.js, Express, TypeScript, Prisma, and PostgreSQL.
+A backend API built with **NestJS, TypeScript, Prisma, and PostgreSQL** for authentication, user management, and order operations using a modular backend architecture.
 
 ## Tech Stack
 
-- Node.js
-- Express.js
-- TypeScript
-- Prisma ORM
-- PostgreSQL
-- JWT
-- bcrypt
-- Zod
-- ESLint
-- Prettier
-
----
-
-## Setup
-
-```bash
-git clone <repository-url>
-cd intern-api
-pnpm install
-```
-
-Create `.env`:
-
-```env
-DATABASE_URL="postgresql://username:password@localhost:5432/intern_api"
-JWT_SECRET="your-secret-key"
-PORT=3001
-```
-
----
-
-## Database
-
-```bash
-pnpm prisma migrate dev
-pnpm prisma generate
-pnpm prisma db seed
-```
-
----
-
-## Run
-
-Development:
-
-```bash
-pnpm dev
-```
-
-Build:
-
-```bash
-pnpm build
-```
-
-Start:
-
-```bash
-pnpm start
-```
-
----
-
-## API Routes
-
-### Auth
-
-```
-POST /api/auth/signup
-POST /api/auth/login
-```
-
-### Users
-
-```
-GET    /api/users
-GET    /api/users/:id
-PATCH  /api/users/:id
-DELETE /api/users/:id
-```
-
-### Orders
-
-```
-POST   /api/orders
-GET    /api/orders
-GET    /api/orders/:id
-PATCH  /api/orders/:id/status
-DELETE /api/orders/:id
-```
-
----
-
-## Authentication
-
-Protected routes require:
-
-```
-Authorization: Bearer <JWT_TOKEN>
-```
-
----
+- **Framework:** NestJS
+- **Language:** TypeScript
+- **ORM:** Prisma
+- **Database:** PostgreSQL
+- **Package Manager:** pnpm
 
 ## Features
 
-- JWT authentication
-- Role-based authorization
-- Password hashing with bcrypt
-- Zod validation
-- Prisma + PostgreSQL database
-- User and Order management
-- Server-side order total calculation
-- ESLint and Prettier configured
+- Authentication and user management
+- Orders API
+- Modular architecture using NestJS modules, controllers, and services
+- Database operations using Prisma
+- Environment-based configuration
 
----
+## Project Setup
 
-## Code Quality
-
-Lint:
+### 1. Install Dependencies
 
 ```bash
-pnpm lint
+pnpm install
 ```
 
-Format:
+### 2. Configure Environment Variables
+
+Create a `.env` file using `.env.example` as a reference and configure your database connection.
+
+```env
+DATABASE_URL="your_postgresql_connection_string"
+```
+
+**Note:** Never commit your actual `.env` file or credentials.
+
+### 3. Generate the Prisma Client
+
+Run the Prisma client generation command configured for this project.
+
+### 4. Start the Development Server
 
 ```bash
-pnpm format
+pnpm start:dev
 ```
+
+Check `package.json` for available scripts and additional project-specific setup instructions.
+
+## Overview
+
+This project uses NestJS's modular architecture to organize authentication, user management, order operations, and database interactions.
+
+## Author
+
+Karishma Sandupatla
